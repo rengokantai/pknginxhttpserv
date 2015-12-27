@@ -78,3 +78,19 @@ kill -USR2 (12) 1234
 kill -WINCh(28) 1234
 kill -QUIT 1234
 ```
+####case studies
+create https server
+```
+openssl genrsa -out xx.com.key 2048
+openssl req -new -key xxx.com.key -out xxx.com.csr
+```
+create oncloud
+```
+wget https://download.owncloud.org/community/owncloud-8.zip
+unzip owncloud.zip
+mv ./owncloud/{.[!.],}* ./
+```
+create crt:
+```
+openssl x509 -req -days 1000 -in xxx.csr -signkey xxx.key -out xxx.crt
+```
