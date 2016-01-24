@@ -94,3 +94,7 @@ create crt:
 ```
 openssl x509 -req -days 1000 -in xxx.csr -signkey xxx.key -out xxx.crt
 ```
+Another command[ciick here](https://www.sslshopper.com/article-most-common-openssl-commands.html)
+```
+openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out certificate.crt
+```
