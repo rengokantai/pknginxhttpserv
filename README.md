@@ -1,4 +1,4 @@
-# pknginxhttpserv
+# pknginxhttpserv4ed
 
 - controlling nginx service
 ```
@@ -191,3 +191,50 @@ Context: ```http```, and ```server```
 #### chunked_transfer_encoding
 ### MIME types
 #### types
+#### types_hash_max_size
+#### types_hash_bucket_size
+
+
+### Limits and restrictions
+#### limit_except
+```
+location /admin/ { 
+    limit_except GET { 
+      allow 192.168.1.0/24; 
+      deny all; 
+    } 
+} 
+```
+#### limit_rate
+```
+limit_rate 500k;
+```
+This will limit connection transfer rates to 500 kilobytes per second. If a client opens two connections, the client will be allowed 2 mul 500 kilobytes.
+
+#### limit_rate_after
+Defines the number of data transferred before the limit_rate directive takes effect.
+
+#### satisfy
+context: location
+
+#### internal
+The specified resource cannot be accessed by external requests.
+
+### File processing and caching
+#### disable_symlinks
+#### directio
+#### directio_alignment
+#### open_file_cache
+#### open_file_cache_errors
+
+#### read_ahead
+
+### Other directives
+#### log_not_found
+#### log_subrequest
+#### merge_slashes
+By default, if the client attempts to access http://website.com//documents/ (note the // in the middle of the URI), Nginx will return a 404 Not Found HTTP error. If you enable this directive, the two slashes will be merged into one and the location pattern will be matched.
+
+#### resolver
+#### resolver_timeout
+
