@@ -101,7 +101,7 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.k
 
 
 
-## HTTP Configuration
+## 3. HTTP Configuration
 ### HTTP core module
 ### Module directives
 #### server_name
@@ -251,3 +251,50 @@ Defines a post-completion action, a URI that will be called by Nginx after the r
 
 ### Using HTTP/2
 make sure you compiled Nginx using the ```--with_http_v2_module```  configure flag.
+
+
+
+
+
+
+### Request headers
+```
+$http_host
+$http_user_agent
+$http_referer
+$http_x_forwarded_for
+```
+### Response headers
+```
+$sent_http_content_type
+$sent_http_content_length
+```
+
+### Nginx generated
+
+(need update)
+
+### The location block
+#### The ~ modifier
+With operating systems such as Microsoft Windows, ~ and ~* are both case-insensitive, as the OS uses a case-insensitive filesystem.
+#### The ~* modifier
+The requested URI must be a case-insensitive match for the specified regular expression:
+#### The ^~ modifier
+Similar to the no-symbol behavior, the location URI must begin with the specified pattern. The difference is that, if the pattern is matched, Nginx stops searching for other patterns (read the Search order and priority section).
+
+#### Search order and priority
+Order:
+- location blocks with the = modifier: If the specified string exactly matches the requested URI, Nginx retains the location block
+- location blocks with no modifier: If the specified string exactly matches the requested URI, Nginx retains the location block
+- location blocks with the ^~ modifier: If the specified string matches the beginning of the requested URI, Nginx retains the location block
+- location blocks with the ~ or ~* modifier: If the regular expression matches the requested URI, Nginx retains the location block
+- location blocks with no modifier: If the specified string matches the beginning of the requested URI, Nginx retains the location block
+
+
+## Module Configuration
+### Rewrite module
+
+### Quantifiers
+### Captures
+
+#### error_page
