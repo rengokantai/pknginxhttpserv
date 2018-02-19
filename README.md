@@ -238,3 +238,16 @@ By default, if the client attempts to access http://website.com//documents/ (not
 #### resolver
 #### resolver_timeout
 
+#### server_tokens
+Context: ```http```, ```server```, and ```location```  
+hide nginx versions
+
+#### underscores_in_headers
+#### variables_hash_max_size
+#### variables_hash_bucket_size
+#### post_action
+Context: ```http```, ```server```, and ```location``` ```if```  
+Defines a post-completion action, a URI that will be called by Nginx after the request has been completed.
+
+### Using HTTP/2
+make sure you compiled Nginx using the ```--with_http_v2_module```  configure flag.
