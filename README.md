@@ -250,8 +250,19 @@ Context: ```http```, ```server```, and ```location``` ```if```  
 Defines a post-completion action, a URI that will be called by Nginx after the request has been completed.
 
 ### Using HTTP/2
-make sure you compiled Nginx using the ```--with_http_v2_module```  configure flag.
+If install nginx via package this module is most likely enabled.
+If compiled yourself, make sure you compiled Nginx using the ```--with_http_v2_module```  configure flag.
+```
+listen 443 ssl http2;
+```
+### http2_chunk_size
 
+Sets the maximum size of chunks into which the response body is sliced.
+Default value: 8k
+
+### http2_body_preread_size
+
+### http2_idle_timeout
 
 
 
