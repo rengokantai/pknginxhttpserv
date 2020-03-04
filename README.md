@@ -264,6 +264,9 @@ Default value: 8k
 
 ### http2_idle_timeout
 
+### http2_max_concurrent_streams
+Sets the maximum number of concurrent HTTP/2 streams in a connection
+
 
 
 
