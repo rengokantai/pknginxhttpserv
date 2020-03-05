@@ -270,6 +270,17 @@ Syntax: number
 Default value: 128
 
 ### http2_max_field_size
+Limits the maximum size of a compressed request header field.
+Syntax: size
+Default value: 4k
+
+### http2_max_header_size
+Limits the maximum size of the entire request header list after decompression
+Syntax: Size
+Default value:16k
+
+### http2_max_requests
+Sets the maximum number of requests can be served through one HTTP/2 connection, after which the connection is closed and the client should use a new connection
 
 
 ### Request headers
