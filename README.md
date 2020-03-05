@@ -266,9 +266,10 @@ Default value: 8k
 
 ### http2_max_concurrent_streams
 Sets the maximum number of concurrent HTTP/2 streams in a connection
+Syntax: number
+Default value: 128
 
-
-
+### http2_max_field_size
 
 
 ### Request headers
