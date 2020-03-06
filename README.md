@@ -283,12 +283,26 @@ Default value:16k
 Sets the maximum number of requests can be served through one HTTP/2 connection, after which the connection is closed and the client should use a new connection
 
 
+### http2_recv_timeout
+Set the tineout for expecting more data from the client, after which the connection is closed.
+Syntax: Time
+Default value: 30
+
+
+
+
+
+
+
+
+
+
 ### Request headers
 ```
-$http_host
-$http_user_agent
-$http_referer
-$http_x_forwarded_for
+$http_host //host http
+$http_user_agent  //web browser
+$http_referer  // previous page from which the client comes
+$http_x_forwarded_for //actual ip
 ```
 ### Response headers
 ```
@@ -297,8 +311,10 @@ $sent_http_content_length
 ```
 
 ### Nginx generated
-
-(need update)
+```
+$args All of the arguments of the query string combined together
+$binary_remote_addr //IP address of the client data
+```
 
 ### The location block
 #### The ~ modifier
